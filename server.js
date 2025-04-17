@@ -14,6 +14,7 @@ const app = express();
 
 // CORS and Middleware setup
 const allowedOrigins = [
+  "*",
   "http://localhost:5173", // local dev frontend
   "https://your-frontend.vercel.app", // deployed frontend
 ];
@@ -36,7 +37,7 @@ app.use("/api/tutors", tutorRoutes);
 app.use("/api/orders", orderRoutes);
 
 app.use("/", (req, res) => {
-  res.json({ message: "Welcome to the backend API" });
+  res.json({ message: "Welcome to the backend API updated *" });
 });
 
 const PORT = process.env.PORT || 8000;
