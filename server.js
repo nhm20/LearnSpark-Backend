@@ -13,9 +13,14 @@ connectDB();
 const app = express();
 
 // CORS and Middleware setup
+const allowedOrigins = [
+  "http://localhost:5173", // local dev frontend
+  "https://your-frontend.vercel.app", // deployed frontend
+];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "*", // Allow frontend URL
+    origin: allowedOrigins,
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
