@@ -14,14 +14,22 @@ connectDB();
 const app = express();
 
 // CORS setup
-const allowedOrigins = [ 
+const allowedOrigins = [
   "http://localhost:5173",
-  "https://learn-spark-frontend-ogpi8dgyq-nms-projects-f4348cc5.vercel.app",
+  "https://learn-spark-frontend.vercel.app", // Production domain
 ];
+
+// Regex for Vercel preview deployments
+const vercelPreviewRegex = /^https:\/\/learn-spark-frontend.*\.vercel\.app$/;
+
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (
+        !origin ||
+        allowedOrigins.includes(origin) ||
+        vercelPreviewRegex.test(origin)
+      ) {
         callback(null, true);
       } else {
         callback(new Error("CORS not allowed for origin: " + origin));
