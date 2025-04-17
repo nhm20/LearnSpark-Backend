@@ -1,0 +1,9 @@
+
+node_modules
+./serviceKeys.json
+.env
+dist
+dist-ssr
+*.local
+Config/serviceKeys.json
+.vercel
