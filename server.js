@@ -16,7 +16,7 @@ const app = express();
 // CORS setup
 const allowedOrigins = [ 
   "http://localhost:5173",
-   "https://learnspark-frontend.vercel.app",
+  "https://learn-spark-frontend-ogpi8dgyq-nms-projects-f4348cc5.vercel.app/",
 ];
 app.use(
   cors({
