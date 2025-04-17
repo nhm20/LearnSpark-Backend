@@ -15,8 +15,7 @@ const app = express();
 
 // CORS setup
 const allowedOrigins = [
-  process.env.CLIENT,
-  Process.env.CLIENT2
+  process.env.CLIENT_URL
 ];
 app.use(
   cors({
