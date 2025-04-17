@@ -14,8 +14,9 @@ connectDB();
 const app = express();
 
 // CORS setup
-const allowedOrigins = [
-  process.env.CLIENT_URL
+const allowedOrigins = [ 
+  "http://localhost:5173",
+   "https://learnspark-frontend.vercel.app",
 ];
 app.use(
   cors({
