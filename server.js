@@ -15,10 +15,9 @@ const app = express();
 
 // CORS setup
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://learnspark-frontend.vercel.app",
+  PROCESS.env.CLIENT,
+  PROCESS.env.CLIENT2
 ];
-
 app.use(
   cors({
     origin: function (origin, callback) {
